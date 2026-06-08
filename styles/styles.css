@@ -1,98 +1,90 @@
 /* =========================
-GLOBAL THEME (BLUE • VIOLET • WHITE)
+GLOBAL THEME (Blue • Purple • White)
 ========================= */
 
 .main {
-    background-color: #f8fafc;
-    font-family: 'Segoe UI', sans-serif;
+    background: #ffffff;
+    font-family: "Segoe UI", sans-serif;
     color: #0f172a;
 }
 
 .block-container {
-    padding: 2rem;
+    padding: 2rem 3rem;
+    max-width: 1200px;
+    margin: auto;
 }
 
-/* smooth animations */
-* {
-    transition: all 0.25s ease-in-out;
+/* =========================
+TYPOGRAPHY
+========================= */
+
+h1, h2, h3 {
+    color: #1e1b4b;
+    font-weight: 800;
+}
+
+p {
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* =========================
+SECTION TITLE
+========================= */
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #0ea5e9, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+/* =========================
+CARD SYSTEM
+========================= */
+
+.card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 20px;
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.08);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(99, 102, 241, 0.18);
 }
 
 /* =========================
 HERO SECTION
 ========================= */
 
-.hero-card {
-    background: linear-gradient(135deg, #0ea5e9, #6366f1);
-    padding: 60px 40px;
-    border-radius: 24px;
-    color: white;
-    text-align: center;
-
-    box-shadow: 0 20px 50px rgba(99, 102, 241, 0.25);
-    position: relative;
-    overflow: hidden;
+.hero {
+    padding: 20px;
 }
 
-/* glow effect */
-.hero-card::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 60%);
-    transform: rotate(25deg);
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero h3 {
+    color: #6366f1;
+    font-weight: 600;
 }
 
 /* =========================
-CARDS (PROJECT / STAT / CONTACT)
+METRICS IMPROVEMENT
 ========================= */
 
-.stat-card,
-.project-card,
-.contact-card {
-    background: white;
-    padding: 22px;
-    border-radius: 18px;
-
+div[data-testid="metric-container"] {
+    background: linear-gradient(135deg, #eff6ff, #eef2ff);
+    border-radius: 16px;
+    padding: 12px;
     border: 1px solid rgba(99, 102, 241, 0.15);
-    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.10);
-
-    position: relative;
-    overflow: hidden;
-}
-
-/* hover effect */
-.stat-card:hover,
-.project-card:hover,
-.contact-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 45px rgba(99, 102, 241, 0.18);
-}
-
-/* top accent line */
-.stat-card::before,
-.project-card::before,
-.contact-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 4px;
-    width: 100%;
-    background: linear-gradient(90deg, #0ea5e9, #6366f1);
-}
-
-/* =========================
-SECTION TITLES
-========================= */
-
-.section-title {
-    font-size: 1.7rem;
-    font-weight: 800;
-    color: #1e1b4b;
-    margin-bottom: 10px;
 }
 
 /* =========================
@@ -102,15 +94,16 @@ BUTTONS
 .stButton > button {
     background: linear-gradient(135deg, #0ea5e9, #6366f1);
     color: white !important;
-    border-radius: 14px;
+    border-radius: 12px;
+    border: none;
     padding: 10px 18px;
     font-weight: 600;
-    border: none;
-    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25);
+    transition: 0.3s ease;
 }
 
 .stButton > button:hover {
     transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(99, 102, 241, 0.35);
 }
 
 /* =========================
@@ -119,9 +112,10 @@ FOOTER
 
 .footer {
     text-align: center;
-    color: #64748b;
-    margin-top: 50px;
+    padding: 20px;
     font-size: 0.9rem;
+    color: #64748b;
+    margin-top: 40px;
 }
 
 /* =========================
@@ -129,7 +123,15 @@ RESPONSIVE DESIGN
 ========================= */
 
 @media (max-width: 768px) {
-    .hero-card {
-        padding: 40px 20px;
+    .block-container {
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero h3 {
+        font-size: 1rem;
     }
 }
