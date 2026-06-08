@@ -6,157 +6,151 @@ st.set_page_config(
     layout="wide"
 )
 
-# ======================
 # LOAD CSS
-# ======================
 with open("styles/styles.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 # ======================
-# HERO SECTION (BLUE–VIOLET FOCUS)
+# HERO SECTION WITH PROFILE
 # ======================
-col1, col2 = st.columns([1, 2], vertical_alignment="center")
+col1, col2 = st.columns([1, 2])
 
 with col1:
-    st.image("assets/profile.png", width=230)
+    try:
+        st.image("assets/profile.png", width=220)
+    except:
+        st.info("📷 Add your profile image in assets/profile.png")
 
 with col2:
     st.markdown("""
-    <div class="hero-card">
+    <div class='hero'>
 
-        <h1>👩‍💻 Relica Malinao</h1>
+    <h1>👩‍💻 Relica Malinao</h1>
 
-        <h3 style="color: #dbeafe;">
-            Computer Science Student • Graphic Artist • Student Leader
-        </h3>
+    <h3>3rd Year Bachelor of Science in Computer Science</h3>
 
-        <p style="color: #e0e7ff;">
-            Passionate developer building modern systems, creative designs,
-            and innovative digital solutions using technology.
-        </p>
+    <p>
+    Aspiring Software Developer • Graphic Artist • Student Leader
+    </p>
 
     </div>
     """, unsafe_allow_html=True)
 
-st.markdown("<br>", unsafe_allow_html=True)
+st.write("")
 
 # ======================
-# ACHIEVEMENTS (BLUE–VIOLET EMPHASIS)
+# STATS
 # ======================
-st.markdown("## 📊 Achievements Overview")
-
 col1, col2, col3, col4 = st.columns(4)
 
-col1.markdown("""
-<div class="stat-card">
-    <h2 style="color:#0ea5e9;">20+</h2>
-    <p>Academic Awards</p>
-</div>
-""", unsafe_allow_html=True)
+with col1:
+    st.metric("Academic Awards", "20+")
 
-col2.markdown("""
-<div class="stat-card">
-    <h2 style="color:#6366f1;">8</h2>
-    <p>Leadership Roles</p>
-</div>
-""", unsafe_allow_html=True)
+with col2:
+    st.metric("Leadership Roles", "8")
 
-col3.markdown("""
-<div class="stat-card">
-    <h2 style="color:#0ea5e9;">15+</h2>
-    <p>Design Awards</p>
-</div>
-""", unsafe_allow_html=True)
+with col3:
+    st.metric("Graphic Design Awards", "15+")
 
-col4.markdown("""
-<div class="stat-card">
-    <h2 style="color:#6366f1;">10+</h2>
-    <p>Hackathons</p>
-</div>
-""", unsafe_allow_html=True)
+with col4:
+    st.metric("Hackathons", "10+")
 
-st.markdown("<br>", unsafe_allow_html=True)
+st.divider()
 
 # ======================
-# ABOUT SECTION
+# ABOUT PREVIEW
 # ======================
-st.markdown("## 🌟 About Me")
+st.markdown("<h2 class='section-title'>🌟 About Me</h2>", unsafe_allow_html=True)
 
-st.markdown("""
-<div class="project-card">
+st.write("""
+I am Relica Malinao, a passionate Computer Science student at
+Dr. Emilio B. Espinosa Sr. Memorial State College of Agriculture
+and Technology (DEBESMSCAT).
 
-<p style="font-size:16px; line-height:1.8; color:#1e1b4b;">
-I am <b style="color:#0ea5e9;">Relica Malinao</b>, a Computer Science student at <b>DEBESMSCAT</b>.
-</p>
+My journey combines technology, leadership, creativity,
+graphic design, and community service.
 
-<p style="font-size:16px; line-height:1.8; color:#334155;">
-I specialize in <b style="color:#6366f1;">software development</b>,
-<b style="color:#0ea5e9;">graphic design</b>, and <b>leadership</b>.
-</p>
+I continuously develop my knowledge in programming,
+cybersecurity, web development, and digital arts while
+serving as a student leader and community advocate.
+""")
 
-<p style="font-size:16px; line-height:1.8; color:#334155;">
-I enjoy building modern systems, designing creative visuals,
-and solving real-world problems using technology.
-</p>
-
-</div>
-""", unsafe_allow_html=True)
+st.divider()
 
 # ======================
-# HIGHLIGHTS (COLOR BALANCED)
+# HIGHLIGHTS
 # ======================
-st.markdown("## 🏆 Featured Highlights")
+st.markdown("<h2 class='section-title'>🏆 Featured Highlights</h2>", unsafe_allow_html=True)
 
 col1, col2, col3 = st.columns(3)
 
-col1.markdown("""
-<div class="stat-card">
-<h3 style="color:#0ea5e9;">🎓 Dean's Lister</h3>
-<p>A.Y. 2024–2025<br>A.Y. 2025–2026</p>
-</div>
-""", unsafe_allow_html=True)
+with col1:
+    st.success("""
+🎓 Dean's Lister  
+A.Y. 2024-2025  
+A.Y. 2025-2026
+""")
 
-col2.markdown("""
-<div class="stat-card">
-<h3 style="color:#6366f1;">👑 President</h3>
-<p>DISCSS Organization<br>A.Y. 2025–2026</p>
-</div>
-""", unsafe_allow_html=True)
+with col2:
+    st.success("""
+👑 President  
+DISCSS  
+A.Y. 2025-2026
+""")
 
-col3.markdown("""
-<div class="stat-card">
-<h3 style="color:#0ea5e9;">🎨 Graphic Design</h3>
-<p>Festival Awardee<br>GDF 2024</p>
-</div>
-""", unsafe_allow_html=True)
+with col3:
+    st.success("""
+🎨 Graphic Design  
+Festival Awardee  
+GDF 2024
+""")
+
+st.divider()
 
 # ======================
-# SKILLS SECTION (BLUE & VIOLET SPLIT)
+# SKILLS
 # ======================
-st.markdown("## 💡 Technical Skills")
+st.markdown("<h2 class='section-title'>💡 Current Technical Skills</h2>", unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown("### 🔵 Programming Skills")
+    st.write("Programming")
     st.progress(70, text="Python")
     st.progress(65, text="Java")
     st.progress(60, text="C++")
     st.progress(60, text="C")
 
 with col2:
-    st.markdown("### 🟣 Design & Web Skills")
+    st.write("Web Development")
     st.progress(70, text="HTML")
     st.progress(65, text="CSS")
     st.progress(85, text="Canva")
     st.progress(80, text="Graphic Design")
 
+st.divider()
+
+# ======================
+# PORTFOLIO PREVIEW
+# ======================
+st.markdown("<h2 class='section-title'>🎨 Creative Portfolio</h2>", unsafe_allow_html=True)
+
+st.write("""
+Explore my Graphic Arts Projects page to view my
+award-winning digital artworks, environmental advocacy
+posters, digital illustrations, and graphic design works.
+""")
+
+st.info("📌 Use the sidebar to explore Education, Skills, Projects, Achievements, Leadership, and Contact pages.")
+
+st.divider()
+
 # ======================
 # FOOTER
 # ======================
 st.markdown("""
-<br><br>
-<div class="footer">
-© 2026 Relica Malinao • Blue & Violet Elite Portfolio
+<div class='footer'>
+© 2026 Relica Malinao  
+Computer Science Student • Graphic Artist • Student Leader
 </div>
 """, unsafe_allow_html=True)
