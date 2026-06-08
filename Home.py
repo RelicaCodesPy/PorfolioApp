@@ -6,12 +6,14 @@ st.set_page_config(
     layout="wide"
 )
 
+# ======================
 # LOAD CSS
+# ======================
 with open("styles/styles.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 # ======================
-# HERO SECTION WITH PROFILE
+# HERO SECTION (IMPROVED)
 # ======================
 col1, col2 = st.columns([1, 2])
 
@@ -23,15 +25,15 @@ with col1:
 
 with col2:
     st.markdown("""
-    <div class='hero'>
+    <div class='hero-card'>
 
-    <h1>👩‍💻 Relica Malinao</h1>
+        <h1>👩‍💻 Relica Malinao</h1>
 
-    <h3>3rd Year Bachelor of Science in Computer Science</h3>
+        <h3>3rd Year Bachelor of Science in Computer Science</h3>
 
-    <p>
-    Aspiring Software Developer • Graphic Artist • Student Leader
-    </p>
+        <p>
+        Aspiring Software Developer • Graphic Artist • Student Leader
+        </p>
 
     </div>
     """, unsafe_allow_html=True)
@@ -39,41 +41,69 @@ with col2:
 st.write("")
 
 # ======================
-# STATS
+# STATS (UPGRADED TO CARDS)
 # ======================
+st.markdown("<h2 class='section-title'>📊 Achievements Overview</h2>", unsafe_allow_html=True)
+
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    st.metric("Academic Awards", "20+")
+    st.markdown("""
+    <div class='stat-card'>
+        <h2>20+</h2>
+        <p>Academic Awards</p>
+    </div>
+    """, unsafe_allow_html=True)
 
 with col2:
-    st.metric("Leadership Roles", "8")
+    st.markdown("""
+    <div class='stat-card'>
+        <h2>8</h2>
+        <p>Leadership Roles</p>
+    </div>
+    """, unsafe_allow_html=True)
 
 with col3:
-    st.metric("Graphic Design Awards", "15+")
+    st.markdown("""
+    <div class='stat-card'>
+        <h2>15+</h2>
+        <p>Design Awards</p>
+    </div>
+    """, unsafe_allow_html=True)
 
 with col4:
-    st.metric("Hackathons", "10+")
+    st.markdown("""
+    <div class='stat-card'>
+        <h2>10+</h2>
+        <p>Hackathons</p>
+    </div>
+    """, unsafe_allow_html=True)
 
 st.divider()
 
 # ======================
-# ABOUT PREVIEW
+# ABOUT SECTION
 # ======================
 st.markdown("<h2 class='section-title'>🌟 About Me</h2>", unsafe_allow_html=True)
 
-st.write("""
-I am Relica Malinao, a passionate Computer Science student at
-Dr. Emilio B. Espinosa Sr. Memorial State College of Agriculture
-and Technology (DEBESMSCAT).
+st.markdown("""
+<div class='project-card'>
 
-My journey combines technology, leadership, creativity,
-graphic design, and community service.
+I am <b>Relica Malinao</b>, a passionate Computer Science student at  
+<b>DEBESMSCAT</b>.
 
-I continuously develop my knowledge in programming,
-cybersecurity, web development, and digital arts while
-serving as a student leader and community advocate.
-""")
+<br><br>
+
+My journey combines <b>technology, leadership, creativity, graphic design,</b>  
+and <b>community service</b>.
+
+<br><br>
+
+I continuously develop my skills in programming, cybersecurity,  
+web development, and digital arts while serving as a student leader.
+
+</div>
+""", unsafe_allow_html=True)
 
 st.divider()
 
@@ -85,44 +115,47 @@ st.markdown("<h2 class='section-title'>🏆 Featured Highlights</h2>", unsafe_al
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.success("""
-🎓 Dean's Lister  
-A.Y. 2024-2025  
-A.Y. 2025-2026
-""")
+    st.markdown("""
+    <div class='stat-card'>
+        <h3>🎓 Dean's Lister</h3>
+        <p>A.Y. 2024–2025<br>A.Y. 2025–2026</p>
+    </div>
+    """, unsafe_allow_html=True)
 
 with col2:
-    st.success("""
-👑 President  
-DISCSS  
-A.Y. 2025-2026
-""")
+    st.markdown("""
+    <div class='stat-card'>
+        <h3>👑 President</h3>
+        <p>DISCSS<br>A.Y. 2025–2026</p>
+    </div>
+    """, unsafe_allow_html=True)
 
 with col3:
-    st.success("""
-🎨 Graphic Design  
-Festival Awardee  
-GDF 2024
-""")
+    st.markdown("""
+    <div class='stat-card'>
+        <h3>🎨 Graphic Design</h3>
+        <p>Festival Awardee<br>GDF 2024</p>
+    </div>
+    """, unsafe_allow_html=True)
 
 st.divider()
 
 # ======================
-# SKILLS
+# SKILLS SECTION
 # ======================
-st.markdown("<h2 class='section-title'>💡 Current Technical Skills</h2>", unsafe_allow_html=True)
+st.markdown("<h2 class='section-title'>💡 Technical Skills</h2>", unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.write("Programming")
+    st.markdown("### Programming")
     st.progress(70, text="Python")
     st.progress(65, text="Java")
     st.progress(60, text="C++")
     st.progress(60, text="C")
 
 with col2:
-    st.write("Web Development")
+    st.markdown("### Web & Design")
     st.progress(70, text="HTML")
     st.progress(65, text="CSS")
     st.progress(85, text="Canva")
@@ -135,22 +168,22 @@ st.divider()
 # ======================
 st.markdown("<h2 class='section-title'>🎨 Creative Portfolio</h2>", unsafe_allow_html=True)
 
-st.write("""
-Explore my Graphic Arts Projects page to view my
-award-winning digital artworks, environmental advocacy
-posters, digital illustrations, and graphic design works.
-""")
+st.markdown("""
+<div class='project-card'>
 
-st.info("📌 Use the sidebar to explore Education, Skills, Projects, Achievements, Leadership, and Contact pages.")
+Explore my Graphic Arts Projects page to view my award-winning digital artworks,  
+environmental advocacy posters, and creative design works.
 
-st.divider()
+</div>
+""", unsafe_allow_html=True)
+
+st.info("📌 Use the sidebar to explore Projects, Skills, Achievements, Leadership, and Contact pages.")
 
 # ======================
 # FOOTER
 # ======================
 st.markdown("""
 <div class='footer'>
-© 2026 Relica Malinao  
-Computer Science Student • Graphic Artist • Student Leader
+© 2026 Relica Malinao • Computer Science Student • Graphic Artist • Student Leader
 </div>
 """, unsafe_allow_html=True)
