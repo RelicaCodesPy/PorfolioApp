@@ -365,4 +365,4 @@ st.markdown("""
 Creativity transforms ideas into impactful visual experiences.
 
 </div>
-""", unsafe_allow_html=Tru
+""", unsafe_allow_html=True)
