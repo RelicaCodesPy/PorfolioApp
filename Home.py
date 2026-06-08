@@ -13,7 +13,7 @@ with open("styles/styles.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 # ======================
-# HERO SECTION
+# HERO SECTION (BLUE–VIOLET FOCUS)
 # ======================
 col1, col2 = st.columns([1, 2], vertical_alignment="center")
 
@@ -26,13 +26,13 @@ with col2:
 
         <h1>👩‍💻 Relica Malinao</h1>
 
-        <h3>
+        <h3 style="color: #dbeafe;">
             Computer Science Student • Graphic Artist • Student Leader
         </h3>
 
-        <p>
-            Passionate about building modern systems, creative designs,
-            and impactful digital solutions using technology and innovation.
+        <p style="color: #e0e7ff;">
+            Passionate developer building modern systems, creative designs,
+            and innovative digital solutions using technology.
         </p>
 
     </div>
@@ -41,7 +41,7 @@ with col2:
 st.markdown("<br>", unsafe_allow_html=True)
 
 # ======================
-# ACHIEVEMENTS (BLUE–VIOLET CARDS)
+# ACHIEVEMENTS (BLUE–VIOLET EMPHASIS)
 # ======================
 st.markdown("## 📊 Achievements Overview")
 
@@ -85,24 +85,25 @@ st.markdown("## 🌟 About Me")
 st.markdown("""
 <div class="project-card">
 
-<p style="font-size:16px; line-height:1.7;">
-I am <b>Relica Malinao</b>, a Computer Science student at <b>DEBESMSCAT</b>.
+<p style="font-size:16px; line-height:1.8; color:#1e1b4b;">
+I am <b style="color:#0ea5e9;">Relica Malinao</b>, a Computer Science student at <b>DEBESMSCAT</b>.
 </p>
 
-<p style="font-size:16px; line-height:1.7;">
-My passion focuses on <b>software development</b>, <b>graphic design</b>,
-and <b>leadership</b> while continuously improving my technical skills.
+<p style="font-size:16px; line-height:1.8; color:#334155;">
+I specialize in <b style="color:#6366f1;">software development</b>,
+<b style="color:#0ea5e9;">graphic design</b>, and <b>leadership</b>.
 </p>
 
-<p style="font-size:16px; line-height:1.7;">
-I enjoy building systems, designing visuals, and solving real-world problems using technology.
+<p style="font-size:16px; line-height:1.8; color:#334155;">
+I enjoy building modern systems, designing creative visuals,
+and solving real-world problems using technology.
 </p>
 
 </div>
 """, unsafe_allow_html=True)
 
 # ======================
-# HIGHLIGHTS
+# HIGHLIGHTS (COLOR BALANCED)
 # ======================
 st.markdown("## 🏆 Featured Highlights")
 
@@ -130,21 +131,21 @@ col3.markdown("""
 """, unsafe_allow_html=True)
 
 # ======================
-# SKILLS
+# SKILLS SECTION (BLUE & VIOLET SPLIT)
 # ======================
 st.markdown("## 💡 Technical Skills")
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown("### Programming (Blue Track)")
+    st.markdown("### 🔵 Programming Skills")
     st.progress(70, text="Python")
     st.progress(65, text="Java")
     st.progress(60, text="C++")
     st.progress(60, text="C")
 
 with col2:
-    st.markdown("### Web & Design (Violet Track)")
+    st.markdown("### 🟣 Design & Web Skills")
     st.progress(70, text="HTML")
     st.progress(65, text="CSS")
     st.progress(85, text="Canva")
@@ -156,6 +157,6 @@ with col2:
 st.markdown("""
 <br><br>
 <div class="footer">
-© 2026 Relica Malinao • Blue • Violet • White Portfolio Theme
+© 2026 Relica Malinao • Blue & Violet Elite Portfolio
 </div>
 """, unsafe_allow_html=True)
