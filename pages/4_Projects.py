@@ -6,30 +6,34 @@ st.set_page_config(
     layout="wide"
 )
 
+# ======================
 # LOAD CSS
+# ======================
 with open("styles/styles.css") as f:
-    st.markdown(
-        f"<style>{f.read()}</style>",
-        unsafe_allow_html=True
-    )
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-st.title("🎨 Graphic Arts Projects")
-
+# ======================
+# HEADER
+# ======================
 st.markdown("""
-### Role: Graphic Artist
+<div class="hero-card">
 
-This collection showcases my graphic design and digital art projects
-developed through competitions, advocacy campaigns, creative challenges,
-and personal artistic exploration.
+<h1 style="color:#0ea5e9;">🎨 Graphic Arts Projects</h1>
 
-Each artwork demonstrates creativity, visual storytelling,
-design thinking, and digital artistry.
-""")
+<p style="color:#e0e7ff; font-size:16px;">
+Role: <b>Graphic Artist</b><br><br>
+A curated collection of creative works showcasing digital illustration,
+poster design, environmental advocacy, typography, and visual storytelling.
+</p>
 
-st.divider()
+</div>
+""", unsafe_allow_html=True)
 
-# FILTER
+st.markdown("<br>", unsafe_allow_html=True)
 
+# ======================
+# FILTER (UI ONLY IMPROVED LOOK)
+# ======================
 category = st.selectbox(
     "Filter Projects",
     [
@@ -42,327 +46,133 @@ category = st.selectbox(
     ]
 )
 
-st.divider()
-
-# PROJECT 1
-
-with st.expander("🧚 Enchanted Whispers"):
-
-    st.image(
-        "assets/artwork7.jpg",
-        use_container_width=True
-    )
-
-    st.markdown("""
-### Project Overview
-
-**Role:** Graphic Artist
-
-**Category:** Digital Illustration
-
-**Description:**
-
-A fantasy-inspired artwork portraying a fairy surrounded
-by butterflies and floral elements.
-
-The artwork symbolizes imagination, freedom,
-and the beauty of nature through elegant composition
-and visual harmony.
-
-### Skills Applied
-
-- Digital Illustration
-- Creative Composition
-- Visual Storytelling
-- Color Harmony
-
-### Tools Used
-
-- Canva
-""")
-
-# PROJECT 2
-
-with st.expander("❤️ One Chance"):
-
-    st.image(
-        "assets/artwork6.jpg",
-        use_container_width=True
-    )
-
-    st.markdown("""
-### Project Overview
-
-**Role:** Graphic Artist
-
-**Category:** Typography Poster
-
-**Description:**
-
-A motivational typography poster emphasizing the importance
-of making every opportunity count.
-
-The design combines meaningful messaging and visual hierarchy
-to inspire determination and excellence.
-
-### Skills Applied
-
-- Typography Design
-- Poster Layout
-- Visual Communication
-- Creative Thinking
-
-### Tools Used
-
-- Canva
-""")
-
-# PROJECT 3
-
-with st.expander("🌍 A Fading World: Our Last Chance"):
-
-    st.image(
-        "assets/artwork5.jpg",
-        use_container_width=True
-    )
-
-    st.markdown("""
-### Project Overview
-
-**Role:** Graphic Artist
-
-**Category:** Environmental Advocacy
-
-**Description:**
-
-An environmental awareness poster highlighting climate change,
-pollution, and humanity's responsibility to protect the Earth.
-
-The artwork encourages collective action toward sustainability.
-
-### Skills Applied
-
-- Advocacy Design
-- Environmental Campaign Design
-- Photo Manipulation
-- Digital Compositing
-
-### Tools Used
-
-- Canva
-""")
-
-# PROJECT 4
-
-with st.expander("🌲 Trees for the Future"):
-
-    st.image(
-        "assets/artwork4.jpg",
-        use_container_width=True
-    )
-
-    st.markdown("""
-### Project Overview
-
-**Role:** Graphic Artist
-
-**Category:** Environmental Conservation
-
-**Description:**
-
-A conservation-themed artwork promoting reforestation,
-wildlife protection, and environmental sustainability.
-
-The design highlights the importance of preserving forests
-for future generations.
-
-### Skills Applied
-
-- Poster Design
-- Digital Illustration
-- Visual Messaging
-- Creative Composition
-
-### Tools Used
-
-- Canva
-""")
-
-# PROJECT 5
-
-with st.expander("🎨 Fragments of Imagination"):
-
-    st.image(
-        "assets/artwork3.jpg",
-        use_container_width=True
-    )
-
-    st.markdown("""
-### Project Overview
-
-**Role:** Graphic Artist
-
-**Category:** Abstract Art
-
-**Description:**
-
-An abstract digital artwork showcasing creativity through
-vibrant colors, flowing patterns, and imaginative forms.
-
-The artwork represents limitless creativity and artistic freedom.
-
-### Skills Applied
-
-- Abstract Art
-- Creative Visualization
-- Pattern Design
-- Digital Art
-
-### Tools Used
-
-- Canva
-""")
-
-# PROJECT 6
-
-with st.expander("🌌 Beyond Reality"):
-
-    st.image(
-        "assets/artwork2.jpg",
-        use_container_width=True
-    )
-
-    st.markdown("""
-### Project Overview
-
-**Role:** Graphic Artist
-
-**Category:** Photo Manipulation
-
-**Description:**
-
-A surreal double-exposure artwork blending portrait imagery,
-nature, and cosmic elements.
-
-The composition explores identity, imagination,
-and human connection with nature.
-
-### Skills Applied
-
-- Photo Manipulation
-- Double Exposure
-- Digital Compositing
-- Creative Editing
-
-### Tools Used
-
-- Canva
-""")
-
-# PROJECT 7
-
-with st.expander("🌸 Neon Serenity"):
-
-    st.image(
-        "assets/artwork1.jpg",
-        use_container_width=True
-    )
-
-    st.markdown("""
-### Project Overview
-
-**Role:** Graphic Artist
-
-**Category:** Digital Illustration
-
-**Description:**
-
-A vibrant anime-inspired digital illustration featuring
-detailed line work, expressive colors, and decorative elements.
-
-The artwork celebrates individuality, confidence,
-and modern digital art.
-
-### Skills Applied
-
-- Character Illustration
-- Digital Drawing
-- Color Theory
-- Graphic Design
-
-### Tools Used
-
-- Canva
-""")
-
-st.divider()
-
-# PROJECT STATISTICS
-
-st.subheader("📊 Portfolio Highlights")
+st.markdown("<br>", unsafe_allow_html=True)
+
+# ======================
+# PROJECT CARD FUNCTION STYLE
+# ======================
+def project(title, image, category_text, description, skills):
+    st.markdown(f"""
+    <div class="project-card">
+
+        <h3 style="color:#0ea5e9;">{title}</h3>
+
+        <p style="color:#6366f1;"><b>Category:</b> {category_text}</p>
+
+        <img src="{image}" style="width:100%; border-radius:12px; margin:10px 0;">
+
+        <p style="color:#334155; line-height:1.6;">
+        {description}
+        </p>
+
+        <p style="color:#1e1b4b;"><b>Skills:</b> {skills}</p>
+
+    </div>
+    """, unsafe_allow_html=True)
+
+# ======================
+# PROJECTS (ELITE CARDS)
+# ======================
+
+project(
+    "🧚 Enchanted Whispers",
+    "assets/artwork7.jpg",
+    "Digital Illustration",
+    "A fantasy-inspired artwork portraying a fairy surrounded by butterflies and floral elements.",
+    "Illustration • Composition • Color Harmony"
+)
+
+project(
+    "❤️ One Chance",
+    "assets/artwork6.jpg",
+    "Typography Poster",
+    "A motivational typography poster emphasizing the importance of opportunities.",
+    "Typography • Layout • Visual Communication"
+)
+
+project(
+    "🌍 A Fading World: Our Last Chance",
+    "assets/artwork5.jpg",
+    "Environmental Advocacy",
+    "An awareness poster about climate change and environmental responsibility.",
+    "Photo Manipulation • Advocacy Design"
+)
+
+project(
+    "🌲 Trees for the Future",
+    "assets/artwork4.jpg",
+    "Environmental Design",
+    "A conservation-themed artwork promoting reforestation and sustainability.",
+    "Poster Design • Visual Messaging"
+)
+
+project(
+    "🎨 Fragments of Imagination",
+    "assets/artwork3.jpg",
+    "Abstract Art",
+    "An abstract piece expressing creativity through color and form.",
+    "Abstract Design • Creative Visualization"
+)
+
+project(
+    "🌌 Beyond Reality",
+    "assets/artwork2.jpg",
+    "Photo Manipulation",
+    "A surreal double exposure artwork blending identity and nature.",
+    "Photo Manipulation • Digital Compositing"
+)
+
+project(
+    "🌸 Neon Serenity",
+    "assets/artwork1.jpg",
+    "Digital Illustration",
+    "An anime-inspired illustration with vibrant expressive colors.",
+    "Illustration • Color Theory"
+)
+
+# ======================
+# STATS SECTION
+# ======================
+st.markdown("## 📊 Portfolio Highlights")
 
 col1, col2, col3, col4 = st.columns(4)
 
-with col1:
-    st.metric(
-        "Artworks",
-        "7"
-    )
+col1.markdown("<div class='stat-card'><h2 style='color:#0ea5e9;'>7</h2><p>Artworks</p></div>", unsafe_allow_html=True)
+col2.markdown("<div class='stat-card'><h2 style='color:#6366f1;'>Graphic Artist</h2><p>Role</p></div>", unsafe_allow_html=True)
+col3.markdown("<div class='stat-card'><h2 style='color:#0ea5e9;'>10+</h2><p>Awards</p></div>", unsafe_allow_html=True)
+col4.markdown("<div class='stat-card'><h2 style='color:#6366f1;'>GDF</h2><p>Recognition</p></div>", unsafe_allow_html=True)
 
-with col2:
-    st.metric(
-        "Role",
-        "Graphic Artist"
-    )
-
-with col3:
-    st.metric(
-        "Design Awards",
-        "10+"
-    )
-
-with col4:
-    st.metric(
-        "GDF Recognition",
-        "Multiple"
-    )
-
-st.divider()
-
-# GDF ACHIEVEMENTS
-
-st.subheader("🏆 Related Graphic Design Achievements")
-
-st.success("""
-🎨 Graphic Design Festival (GDF 2024)
-
-• 1st Runner Up
-
-• Rank 2 – Art Exhibit
-
-• Rank 2 – Semi Finals
-
-• Best in Photo Manipulation
-
-• Best Abstract Art
-
-• Best in One Color Shade Art
-
-• Most Popular Graphic Design
-
-• Nitezen's Choice
-
-• Top Performing Speed Art
-
-• Top Performing Finalist – Fixing a Broken Art Challenge
-""")
-
-st.divider()
+# ======================
+# ACHIEVEMENTS
+# ======================
+st.markdown("## 🏆 Graphic Design Achievements")
 
 st.markdown("""
+<div class="project-card">
+
+🎨 <b>Graphic Design Festival (GDF 2024)</b>
+
+<br><br>
+
+• 1st Runner Up<br>
+• Rank 2 – Art Exhibit<br>
+• Rank 2 – Semi Finals<br>
+• Best in Photo Manipulation<br>
+• Best Abstract Art<br>
+• Best One Color Shade Art<br>
+• Most Popular Graphic Design<br>
+• Netizen's Choice<br>
+• Top Speed Art Performer<br>
+• Finalist – Fixing a Broken Art Challenge
+
+</div>
+""", unsafe_allow_html=True)
+
+# ======================
+# FOOTER
+# ======================
+st.markdown("""
 <div class='footer'>
-
-Creativity transforms ideas into impactful visual experiences.
-
+Creativity is the bridge between imagination and impact.
 </div>
 """, unsafe_allow_html=True)
